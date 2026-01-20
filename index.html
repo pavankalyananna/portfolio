@@ -12,24 +12,22 @@
 
   <style>
     :root {
-      --bg: #0f172a;            /* dark slate */
-      --bg-soft: #020617;      /* near-black */
+      --bg: #0f172a;
+      --bg-soft: #020617;
       --card: #020617;
       --text: #e5e7eb;
       --muted: #9ca3af;
-      --accent: #38bdf8;       /* cyan */
-      --accent-soft: #0ea5e9;
+      --accent: #38bdf8;
       --border: rgba(255,255,255,0.08);
       --glow: rgba(56,189,248,0.4);
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, sans-serif;
+      font-family: Inter, system-ui, sans-serif;
       background: radial-gradient(circle at top, #020617 0%, #0f172a 40%, #020617 100%);
       color: var(--text);
       line-height: 1.6;
@@ -62,31 +60,12 @@
       height: 68px;
     }
 
-    .name {
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
+    .name { font-weight: 600; }
 
     .nav-links a {
       margin-left: 1.5rem;
       font-size: 0.95rem;
       color: var(--text);
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
     }
 
     .resume-btn {
@@ -94,56 +73,26 @@
       border: 1px solid var(--accent);
       border-radius: 8px;
       color: var(--accent);
-      font-size: 0.9rem;
-      transition: all 0.25s ease;
-    }
-
-    .resume-btn:hover {
-      background: var(--accent);
-      color: #020617;
-      box-shadow: 0 0 12px var(--glow);
     }
 
     /* ---------- HERO ---------- */
     .hero {
-      padding: 6rem 0 5rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(56,189,248,0.15), transparent 70%);
-      top: -200px;
-      right: -200px;
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      animation: fadeUp 1s ease forwards;
+      padding: 6rem 0 5rem;
     }
 
     .hero h1 {
       font-size: 3rem;
-      margin: 0 0 0.6rem 0;
-      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
     }
 
     .hero h2 {
       font-size: 1.2rem;
-      font-weight: 500;
       color: var(--muted);
-      margin: 0 0 1.5rem 0;
+      margin-bottom: 1.4rem;
     }
 
     .hero p {
       max-width: 720px;
-      font-size: 1.05rem;
       color: #d1d5db;
     }
 
@@ -157,17 +106,11 @@
       border-radius: 10px;
       border: 1px solid var(--accent);
       font-weight: 500;
-      transition: all 0.25s ease;
     }
 
     .hero-actions a.primary {
       background: var(--accent);
       color: #020617;
-    }
-
-    .hero-actions a:hover {
-      box-shadow: 0 0 14px var(--glow);
-      transform: translateY(-2px);
     }
 
     /* ---------- SECTIONS ---------- */
@@ -179,18 +122,6 @@
     .section-title {
       font-size: 1.5rem;
       margin-bottom: 2rem;
-      letter-spacing: 0.4px;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: var(--accent);
-      margin-top: 0.5rem;
-      border-radius: 2px;
     }
 
     /* ---------- SKILLS ---------- */
@@ -201,128 +132,70 @@
     }
 
     .skill-card {
-      background: linear-gradient(180deg, #020617, #020617);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 1.4rem;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      background: #020617;
     }
 
-    .skill-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, rgba(56,189,248,0.08), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .skill-card:hover::before {
-      opacity: 1;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-    }
-
-    .skill-card h4 {
-      margin: 0 0 0.75rem 0;
-      font-size: 1rem;
-    }
+    .skill-card h4 { margin-top: 0; }
 
     .skill-card ul {
       margin: 0;
-      padding-left: 1.1rem;
+      padding-left: 1.2rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
     /* ---------- PROJECTS ---------- */
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
     }
 
     .project-card {
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 1.6rem;
+      padding: 1.8rem;
       background: #020617;
       display: flex;
       flex-direction: column;
-      transition: all 0.35s ease;
-      position: relative;
-      overflow: hidden;
     }
 
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, rgba(56,189,248,0.12), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    .image-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 1.2rem;
     }
 
     .project-image {
       width: 100%;
-      height: 350px;
-       object-fit: cover; 
-      background: linear-gradient(135deg, #020617, #020617);
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 0.9rem;
+      height: 420px;
+      object-fit: contain;
+      background: #020617;
+      border-radius: 12px;
       border: 1px dashed var(--border);
-    }
-
-    .project-card h4 { margin: 0 0 0.5rem 0; }
-
-    .project-card p {
-      color: var(--muted);
-      font-size: 0.95rem;
+      display: block;
     }
 
     .project-meta {
-      margin-top: 0.75rem;
       font-size: 0.85rem;
-      color: #9ca3af;
+      color: var(--muted);
+      margin-top: 0.5rem;
     }
 
     .project-focus {
-      margin-top: 0.9rem;
-      padding: 0.7rem 0.9rem;
-      background: #020617;
+      margin-top: 1rem;
+      padding: 0.7rem;
       border: 1px solid var(--border);
       border-radius: 8px;
-      font-size: 0.85rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: monospace;
       color: var(--accent);
+      font-size: 0.85rem;
     }
 
-    .project-links {
-      margin-top: auto;
-      padding-top: 1.2rem;
-      font-size: 0.9rem;
-    }
-
-    .project-links a { margin-right: 1rem; }
+    .project-links { margin-top: 1rem; }
 
     /* ---------- EXPERIENCE ---------- */
     .timeline {
@@ -335,8 +208,6 @@
       border-left: 3px solid var(--accent);
     }
 
-    .job h4 { margin: 0; }
-
     .job span {
       font-size: 0.9rem;
       color: var(--muted);
@@ -348,72 +219,50 @@
       color: var(--muted);
     }
 
-    /* ---------- CONTACT ---------- */
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      font-size: 1rem;
-    }
-
-    .contact-list li {
-      margin-bottom: 0.9rem;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ---------- ANIMATIONS ---------- */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 800px) {
-      .hero h1 { font-size: 2.4rem; }
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 768px) {
+      .project-image {
+        width: 900px;
+        height: auto;
+      }
       .nav-links { display: none; }
+      .hero h1 { font-size: 2.3rem; }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <header>
-    <div class="container nav">
-      <div class="name">Pavan Kalyan</div>
-      <div class="nav-links">
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-        <a href="resume.pdf" class="resume-btn" download>Resume</a>
-      </div>
+<header>
+  <div class="container nav">
+    <div class="name">Pavan Kalyan</div>
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.pdf" class="resume-btn" download>Resume</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>Backend Engineer</h1>
-      <h2>Java • Spring Boot • Distributed Systems • Transactional Backends</h2>
-      <p>
-        I design and build backend systems focused on scalability, security, and data consistency. 
-        My work centers on REST APIs, transactional workflows, authentication systems, and production debugging.
-      </p>
-      <div class="hero-actions">
-        <a href="https://github.com/pavankalyananna" class="primary" target="_blank">GitHub</a>
-        <a href="#projects">View Projects</a>
-      </div>
+<section class="hero">
+  <div class="container">
+    <h1>Backend Engineer</h1>
+    <h2>Java • Spring Boot • Distributed Systems • Transactional Backends</h2>
+    <p>
+      I design and build backend systems focused on scalability, security, and data consistency.
+      My work centers on REST APIs, transactional workflows, authentication systems, and production debugging.
+    </p>
+    <div class="hero-actions">
+      <a href="https://github.com/pavankalyananna" class="primary" target="_blank">GitHub</a>
+      <a href="#projects">View Projects</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills">
+<!-- SKILLS -->
+ <section id="skills">
     <div class="container">
       <h3 class="section-title">Technical Skills</h3>
       <div class="skills-grid">
@@ -457,15 +306,18 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="container">
-      <h3 class="section-title">Selected Backend Projects</h3>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <h3 class="section-title">Selected Backend Projects</h3>
 
-      <div class="projects-grid">
-        <div class="project-card">
-           <img class="project-image" src="user-Authentication.png" alt="Auth Architecture Image">
-          <h4>User Authentication System</h4>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="image-scroll">
+          <img class="project-image" src="user-Authentication.png" alt="Auth Architecture">
+        </div>
+        <h4>User Authentication System</h4>
           <p>
             Stateless authentication service built with Spring Security and JWT, focusing on token-based security and role-based authorization.
           </p>
@@ -474,15 +326,15 @@
             Design Focus: Stateless auth, token expiry handling, RBAC enforcement
           </div>
           <div class="project-links">
-            <a href="https://github.com/pavankalyananna" target="_blank">GitHub</a>
+            <a href="https://github.com/pavankalyananna/authenticationSystem" target="_blank">GitHub</a>
           </div>
         </div>
 
-        <div class="project-card">
-      <!--    <div class="project-image">Wallet Flow Diagram</div> -->
+      <div class="project-card">
+        <div class="image-scroll">
           <img class="project-image" src="E-Wallet.png" alt="Wallet Flow Diagram">
-
-          <h4>E-Wallet Transaction System</h4>
+        </div>
+        <h4>E-Wallet Transaction System</h4>
           <p>
             Transaction-heavy REST APIs supporting recharge, transfers, and history with strict ACID compliance and rollback safety.
           </p>
@@ -491,52 +343,53 @@
             Design Focus: Atomic transactions, isolation levels, consistency guarantees
           </div>
           <div class="project-links">
-            <a href="https://github.com/pavankalyananna" target="_blank">GitHub</a>
+            <a href="https://github.com/pavankalyananna/ewallet" target="_blank">GitHub</a>
           </div>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <h3 class="section-title">Professional Experience</h3>
-      <div class="timeline">
-        <div class="job">
-          <h4>Tata Consultancy Services — System Engineer</h4>
-          <span>Oct 2022 – Mar 2024</span>
-          <ul>
-        <li>   Built and maintained backend services for NSDL PAN systems handling high-volume, transaction-heavy workflows.</li>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <h3 class="section-title">Professional Experience</h3>
+    <div class="timeline">
+      <div class="job">
+        <h4>Tata Consultancy Services — System Engineer</h4>
+        <span>Oct 2022 – Mar 2024</span>
+        <ul>
+           <li>   Built and maintained backend services for NSDL PAN systems handling high-volume, transaction-heavy workflows.</li>
 <li>  Designed secure REST APIs using Spring Boot with strict validation, error handling, and layered architecture.</li>
 <li> Implemented stateless JWT authentication and fine-grained role-based access control for sensitive identity-related operations.</li>
 <li> Designed multi-table transactional flows to guarantee consistency across PAN application, user, and status tracking modules.</li>
 <li> Investigated and fixed production issues related to data inconsistency, performance bottlenecks, and edge-case failures.</li>
 <li> Actively participated in code reviews, release cycles, and CI/CD pipelines to ensure production stability</li>
         <li> <strong>Technologies Used:</strong> Java, Spring Boot, Hibernate, MySQL, Maven, Bitbucket</li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h3 class="section-title">Contact</h3>
-      <ul class="contact-list">
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h3 class="section-title">Contact</h3>
+     <ul class="contact-list">
         <li>Email: apk.pavan.07@gmail.com</li>
         <li>GitHub: <a href="https://github.com/pavankalyananna" target="_blank">github.com/pavankalyananna</a></li>
         <li>LeetCode: <a href="https://leetcode.com/u/pavankalyananna/" target="_blank">leetcode.com/u/pavankalyananna</a></li>
       </ul>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      © 2022 Pavan Kalyan — Backend Engineer
-    </div>
-  </footer>
+<footer>
+  <div class="container">
+    © 2022 Pavan Kalyan — Backend Engineer
+  </div>
+</footer>
 
 </body>
 </html>
